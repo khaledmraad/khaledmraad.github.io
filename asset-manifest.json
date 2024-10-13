@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ebd7ed89.css",
+    "main.js": "/static/js/main.35607cb9.js",
+    "static/js/453.0379048a.chunk.js": "/static/js/453.0379048a.chunk.js",
+    "static/media/epc2.0.jpg": "/static/media/epc2.0.48abef61890a0cb2ba0c.jpg",
+    "static/media/cpc2-6220cb0d.jpg": "/static/media/cpc2-6220cb0d.89eaba763066541b0d69.jpg",
+    "static/media/isamm.jpg": "/static/media/isamm.77214560353bf4e1372e.jpg",
+    "static/media/hackfest8.jpg": "/static/media/hackfest8.b4a24f0d454302ea2f58.jpg",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/ctf4-925536ad.jpg": "/static/media/ctf4-925536ad.f9ebb955942ec9830d42.jpg",
+    "static/media/ctf1-fe5e0b6e.jpg": "/static/media/ctf1-fe5e0b6e.cf87bc338cc85eb2cbcc.jpg",
+    "static/media/khaled.jpeg": "/static/media/khaled.59b84241f4b49e8ed983.jpeg",
+    "static/media/webdev.png": "/static/media/webdev.31af56ff9884203f2417.png",
+    "static/media/under_const.jpg": "/static/media/under_const.6171548949714e480ec2.jpg",
+    "static/media/MeutasSoft-Bold.woff2": "/static/media/MeutasSoft-Bold.3f1f4de9e676698ea444.woff2",
+    "static/media/cloud-computing.png": "/static/media/cloud-computing.fb44fb736f8a4103669d.png",
+    "static/media/cyber-security.png": "/static/media/cyber-security.29b84811a8e14d74113f.png",
+    "static/media/ai (1).png": "/static/media/ai (1).0a8ae833bac961c10b0c.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.ebd7ed89.css.map": "/static/css/main.ebd7ed89.css.map",
+    "main.35607cb9.js.map": "/static/js/main.35607cb9.js.map",
+    "453.0379048a.chunk.js.map": "/static/js/453.0379048a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebd7ed89.css",
+    "static/js/main.35607cb9.js"
+  ]
+}
