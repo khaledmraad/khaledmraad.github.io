@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Meutas";
+    src: url("assets/fonts/Meutas-Font/Meutas.Soft/MeutasSoft-Bold.woff2")
+      format("woff2"); /* adjust the path to match your project structure */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    src: url("assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"); /* adjust the path to match your project structure */
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+:root {
+  --bg-light: #faf4eb;
+  --bg-dark: #051321;
+  --dot-light: #bfbdbe;
+  --dot-dark: #494949;
+  --dotSize: 0.07rem;
+  --bgSize: 1.5rem;
+  --bgPosition: calc(var(--bgSize));
+}
+
+.Meutas {
+  font-family: "Meutas";
+}
+.Roboto {
+  font-family: "Roboto";
+}
+
+body {
+  @apply bg-[var(--bg-light)] dark:bg-[var(--bg-dark)];
+  
+  background-image: radial-gradient(
+      circle at center,
+      var(--dot-light) var(--dotSize),
+      transparent 0
+    ),
+    radial-gradient(circle at center, var(--dot-light) var(--dotSize), transparent 0);
+  background-size: var(--bgSize) var(--bgSize);
+  background-position: 0 0, var(--bgPosition) var(--bgPosition);
+
+  margin: 0;
+  font-family: "Meutas", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: #343a40;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:is(.dark body) {
+  background-image: radial-gradient(
+      circle at center,
+      var(--dot-dark) var(--dotSize),
+      transparent 0
+    ),
+    radial-gradient(circle at center, var(--dot-dark) var(--dotSize), transparent 0);
+}
