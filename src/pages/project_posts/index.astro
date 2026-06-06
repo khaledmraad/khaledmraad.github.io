@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { postExcerpt, postImageUrl, readingTimeFromText, routeSlugFromId, sortPostsByDate } from "../../lib/posts";
+
+const posts = sortPostsByDate(await getCollection("projectPosts"));
+---
+
+<Layout title="Life Posts" bodyClass="list" activePath="/project_posts">
+  <header class="page-header">
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+    </div>
+    <h1>Random Projects</h1>
+  </header>
+  {
+    posts.map((post) => (
+      <PostCard
+        href={`/project_posts/${routeSlugFromId(post.id)}/`}
+        title={post.data.title}
+        excerpt={postExcerpt(post.body)}
+        date={post.data.date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        })}
+        readingTime={readingTimeFromText(post.body)}
+        imageUrl={postImageUrl("project_posts", routeSlugFromId(post.id), post.data.cover?.image ?? post.data.thumbnail)}
+      />
+    ))
+  }
+</Layout>

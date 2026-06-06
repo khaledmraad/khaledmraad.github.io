@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import {
+  postExcerpt,
+  postImageUrl,
+  readingTimeFromText,
+  routeSlugFromId,
+  sortPostsByDate,
+} from "../../lib/posts";
+
+const posts = sortPostsByDate(await getCollection("blogPosts"));
+
+
+
+---
+
+<Layout title="Blog Posts" bodyClass="list" activePath="/blog_posts">
+  <header class="page-header">
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+    </div>
+    <h1>Blog Posts</h1>
+  </header>
+  {
+    posts.map((post) => (
+      <PostCard
+        href={`/blog_posts/${routeSlugFromId(post.id)}/`}
+        title={post.data.title}
+        excerpt={postExcerpt(post.body)}
+        date={post.data.date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        })}
+        readingTime={readingTimeFromText(post.body)}
+        imageUrl={postImageUrl(
+          "blog_posts",
+          routeSlugFromId(post.id),
+          // cover.image is defined in content frontmatter (see /src/content/blog_posts/*/index.md)
+          (post.data.cover as { image?: string } | undefined)?.image ??
+            (post.data as { thumbnail?: string }).thumbnail,
+        )}
+      />
+    )) 
+    
+  }
+</Layout>
